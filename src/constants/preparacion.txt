@@ -1,0 +1,3 @@
+sacar a const sizes y tipos de icono
+renombrar cosas 
+ver si se pueden simplificar funciones o reutilizar

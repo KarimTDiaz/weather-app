@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { COLORS, FONT_FAMILY } from '../constants/variables';
 
 const GlobalStyle = createGlobalStyle`
 *,*::after,*::before{
@@ -20,10 +21,11 @@ a {
   }
 body {
 	margin: 0;
-    max-width: 100vw;
+    max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
-	font-family: 'Inter', sans-serif;
+	font-family: ${FONT_FAMILY.primary};
+	color: ${COLORS.primary};
 }
 `;
 
