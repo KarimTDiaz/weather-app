@@ -8,7 +8,7 @@ export const getMediumTempByDay = data => {
 
 	forecastRawData.map(item => {
 		const dayOfTheWeek = new Date(item[0].dt_txt.split(' ')[0]).getDay();
-		console.log(item);
+
 		const maxTemp = item.reduce((sum, currentItem) => {
 			if (currentItem.main.temp_max > sum) {
 				sum = currentItem.main.temp_max;

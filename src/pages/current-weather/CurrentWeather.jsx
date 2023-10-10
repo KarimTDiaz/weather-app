@@ -53,7 +53,7 @@ const CurrentWeather = () => {
 
 	if (loading) return <h1>Loading</h1>;
 	if (error) return <h1>Wrong...</h1>;
-	console.log(finalData[0].wind);
+
 	return (
 		<>
 			<CurrentWeatherContainer

@@ -26,6 +26,7 @@ body {
     margin-right: auto;
 	font-family: ${FONT_FAMILY.primary};
 	color: ${COLORS.primary};
+	background-color: ${COLORS.dark};
 }
 `;
 

@@ -14,6 +14,7 @@ import {
 } from './styles';
 
 const OverviewList = ({ items }) => {
+	console.log(items);
 	const navigate = useNavigate();
 
 	return (

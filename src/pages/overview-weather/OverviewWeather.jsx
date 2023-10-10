@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 import OverviewList from '../../components/overview-list/OverviewList';
+import PopUp from '../../components/pop-up/PopUp';
 import SearchBar from '../../components/search-bar/SearchBar';
 import { API_KEY, URLS } from '../../constants/apiRequests';
 import { useFetch } from '../../hooks/useFetch';
 import { StyledOverviewWeatherContainer } from './styles';
 
 const OverviewWeather = () => {
-	const { finalData, loading, error, setFetchInfo, response } = useFetch();
+	const { finalData, loading, error, message, setFetchInfo } = useFetch();
 	const [lat, setLat] = useState();
 	const [long, setLong] = useState();
 	const [requests, setRequests] = useState([
@@ -29,12 +30,25 @@ const OverviewWeather = () => {
 		});
 	}, [lat, long, requests]);
 
+	useEffect(() => {
+		if (!finalData) return;
+		finalData.forEach((data, index) => {
+			if (!data) {
+				const filteredRequests = requests.filter(
+					(_, index) => finalData[index + 1] !== undefined
+				);
+				setRequests(filteredRequests);
+			}
+		});
+	}, [finalData]);
+
 	if (loading) return <h1>Loading</h1>;
 	if (error) return <h1>Loading</h1>;
-
+	console.log(finalData);
 	return (
 		<>
 			<StyledOverviewWeatherContainer>
+				{message === 'Invalid Location' && <PopUp />}
 				<SearchBar requests={requests} setRequests={setRequests} />
 				<OverviewList items={finalData} />
 			</StyledOverviewWeatherContainer>

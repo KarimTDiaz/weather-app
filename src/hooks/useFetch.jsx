@@ -21,6 +21,7 @@ export const useFetch = initialFetch => {
 		loading: true,
 		error: undefined
 	});
+	console.log(initialFetch);
 	const [fetchInfo, setFetchInfo] = useState(initialFetch);
 
 	useEffect(() => {

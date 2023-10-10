@@ -1,17 +1,3 @@
-/* export const formatDateAndFilterByForecast = data => {
-	const finalObj = data[1].list.reduce((result, item) => {
-		const dates = item.dt_txt.split(' ', 1);
-		if (!result[dates]) {
-			result[dates] = [];
-		}
-		result[dates].push(item);
-		return result;
-	}, {});
-
-	return finalObj;
-};
- */
-
 export const formatDateAndFilterByForecast = data => {
 	const finalArray = data[1].list.reduce((result, item) => {
 		const date = item.dt_txt.split(' ')[0];

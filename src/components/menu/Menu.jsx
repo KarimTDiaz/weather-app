@@ -9,7 +9,7 @@ const Menu = () => {
 		<DotsThreeCircle
 			size={45}
 			weight='fill'
-			fill={COLORS.textColor}
+			fill={COLORS.primary}
 			onClick={() =>
 				navigate(location.pathname === '/overview' ? '/' : '/overview')
 			}

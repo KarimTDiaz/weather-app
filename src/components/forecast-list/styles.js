@@ -5,6 +5,11 @@ const ForecastListContainer = styled.div`
 	position: relative;
 	z-index: 1;
 	padding: 1rem;
+	@media screen and (min-width: 1024px) {
+		margin-left: auto;
+		margin-right: auto;
+		width: 60%;
+	}
 `;
 
 const ForecastListUl = styled.ul`

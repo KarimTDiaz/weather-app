@@ -23,6 +23,11 @@ const DetailsCardsContainer = styled.div`
 	grid-template-columns: repeat(2, 1fr);
 	gap: 1rem;
 	padding: 0rem 0.5rem;
+	@media screen and (min-width: 1024px) {
+		margin-left: auto;
+		margin-right: auto;
+		width: 60%;
+	}
 `;
 
 export {
